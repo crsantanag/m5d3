@@ -1,0 +1,29 @@
+<h1>Movies#</h1>
+<h1>Movies#new</h1>
+
+<div>
+    <button class="secondary"> <%= link_to "Volver",   root_path %> </button>
+    <button class="secondary"> <%= link_to "Listar",   movies_show_path %> </button>
+    <button class="secondary"> <%= link_to "Crear",    movies_new_path %> </button>
+    <button class="secondary"> <%= link_to "Editar",   movies_editar_path %> </button>
+    <button class="secondary"> <%= link_to "Eliminar", movies_eliminar_path %> </button>
+<br>
+
+<br>
+<%= form_with model: @movie, method: :post do |form| %>
+    <div>
+        <%= form.label :name, "Name" %>
+        <%= form.text_field :name %>
+    </div>
+    <div>
+        <%= form.label :director, "Director" %>
+        <%= form.text_field :director %>
+    </div>
+    <div>
+        <%= form.label :synopsis, "Synopsis" %>
+        <%= form.text_field :synopsis %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

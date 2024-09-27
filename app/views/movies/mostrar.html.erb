@@ -1,0 +1,22 @@
+<h1>Movies#</h1>
+<h1>Movies#resultado</h1>
+
+<div>
+    <button class="secondary"> <%= link_to "Volver",   root_path %> </button>
+    <button class="secondary"> <%= link_to "Listar",   movies_show_path %> </button>
+    <button class="secondary"> <%= link_to "Crear",    movies_new_path %> </button>
+    <button class="secondary"> <%= link_to "Editar",   movies_editar_path %> </button>
+    <button class="secondary"> <%= link_to "Eliminar", movies_eliminar_path %> </button>
+<div>
+<br>
+
+<h1>Movie <%= @message %></h1>
+
+<h3>La película con los siguientes datos ha sido <%= @message %>:</h3>
+
+<ul>
+    <>Id         : <%= @movie.id %></li>
+    <li>Nombre   : <%= @movie.name %></li>
+    <li>Director : <%= @movie.director %></li>
+    <li>Sinopsis : <%= @movie.synopsis %></li>
+</ul>

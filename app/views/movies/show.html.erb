@@ -1,0 +1,22 @@
+<h1>Movies#</h1>
+<h1>Movies#show</h1>
+
+<div>
+    <button class="secondary"> <%= link_to "Volver",   root_path %> </button>
+    <button class="secondary"> <%= link_to "Listar",   movies_show_path %> </button>
+    <button class="secondary"> <%= link_to "Crear",    movies_new_path %> </button>
+    <button class="secondary"> <%= link_to "Editar",   movies_editar_path %> </button>
+    <button class="secondary"> <%= link_to "Eliminar", movies_eliminar_path %> </button>
+<div>
+<br>
+
+<h2> Movies </h2>
+<div>
+    <% @movie.each do |movie| %>
+        <div>
+            <h2><%= movie.id %> <%= movie.name %></h2>
+            <p><%= movie.synopsis %></p>
+            <p><strong>Director:</strong> <%= movie.director %></p>
+        </div>
+    <% end %>
+</div>
