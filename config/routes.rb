@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "pages#index"
   get  "documentaries/index"
   get  "documentaries/create"
-  get  "documentaries/new"
+  get  "documentaries /new"
 
   get  "series/index"
   get  "series/create"
