@@ -1,10 +1,16 @@
 <div>
     <h1>Documentales</h1>
 
-    <div>
-        <button class="secondary"> <%= link_to "Volver", root_path %> </button>
-        <button class="secondary"> <%= link_to "Listar", documentaries_index_path %> </button>
-        <button class="secondary"> <%= link_to "Crear",  documentaries_new_path %> </button>
-    <div>
+    <div class="grid"> 
+        <%= form_with url: documentaries_search_path, method: :get, local: true do |form| %>
+            <button class="secondary"> <%= link_to "Volver", root_path %> </button>
+            <button class="secondary"> <%= link_to "Listar", documentaries_index_path %> </button>
+            <button class="secondary"> <%= link_to "Crear",  documentaries_new_path %> </button>
+            <button class="secondary"> <%= link_to "Buscar", documentaries_search_path %> </button>
+            <%= form.label :query, "Buscar película o texto" %>
+            <%= form.text_field :query, required: true, class: "input-width-search" %>
+            <%= form.submit "Buscar", class: "input-width-search" %>
+        <% end %>
+    </div>
     <br>
 <div>

@@ -1,28 +1,34 @@
 <div>
     <h1>Documentales</h1>
 
-    <div>
-        <button class="secondary"> <%= link_to "Volver", root_path %> </button>
-        <button class="secondary"> <%= link_to "Listar", documentaries_index_path %> </button>
-        <button class="secondary"> <%= link_to "Crear",  documentaries_new_path %> </button>
+    <div class="grid"> 
+        <%= form_with url: documentaries_search_path, method: :get, local: true do |form| %>
+            <button class="secondary"> <%= link_to "Volver", root_path %> </button>
+            <button class="secondary"> <%= link_to "Listar", documentaries_index_path %> </button>
+            <button class="secondary"> <%= link_to "Crear",  documentaries_new_path %> </button>
+            <button class="secondary"> <%= link_to "Buscar", documentaries_search_path %> </button>
+            <%= form.label :query, "Buscar película o texto" %>
+            <%= form.text_field :query, required: true, class: "input-width-search" %>
+            <%= form.submit "Buscar", class: "input-width-search" %>
+        <% end %>
     </div>
     <br>
 
     <%= form_with model: @documentary, method: :post do |form| %>
         <div class="col-large">
             <%= form.label :name, "Nombre (max 50 caracteres)" %>
-            <%= form.text_field :name, required: true %>
+            <%= form.text_field :name, required: true, class: "input-width-new" %>
         </div>
         <div class="col-large">
             <%= form.label :director, "Director (max 50 caracteres)" %>
-            <%= form.text_field :director, required: true %>
+            <%= form.text_field :director, required: true, class: "input-width-new" %>
         </div>
         <div class="col-large">
             <%= form.label :synopsis, "Sinopsis (max 250 caracteres)" %>
-            <%= form.text_field :synopsis, required: true %>
+            <%= form.text_field :synopsis, required: true, class: "input-width-new" %>
         </div>
         <div class="col-medium">
-            <%= form.submit "Guardar documental" %>
+            <%= form.submit "Guardar documental", class: "input-width-new" %>
         </div>
     <% end %>
 </div>

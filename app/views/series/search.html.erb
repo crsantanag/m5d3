@@ -1,12 +1,12 @@
 <div>
-    <h1>Películas</h1>
+    <h1>Series</h1>
 
     <div class="grid"> 
-        <%= form_with url: movies_search_path, method: :get, local: true do |form| %>
+        <%= form_with url: series_search_path, method: :get, local: true do |form| %>
             <button class="secondary"> <%= link_to "Volver", root_path %> </button>
-            <button class="secondary"> <%= link_to "Listar", movies_index_path %> </button>
-            <button class="secondary"> <%= link_to "Crear",  movies_new_path %> </button>
-            <button class="secondary"> <%= link_to "Buscar", movies_search_path %> </button>
+            <button class="secondary"> <%= link_to "Listar", series_index_path %> </button>
+            <button class="secondary"> <%= link_to "Crear",  series_new_path %> </button>
+            <button class="secondary"> <%= link_to "Buscar", series_search_path %> </button>
             <%= form.label :query, "Buscar película o texto" %>
             <%= form.text_field :query, required: true, class: "input-width-search" %>
             <%= form.submit "Buscar", class: "input-width-search" %>
@@ -14,7 +14,7 @@
     </div>
     <br>
 
-    <% if @movies.any? %>
+        <% if @series.any? %>
         <table>
             <thead data-theme="light">
                 <tr>
@@ -24,20 +24,19 @@
                 </tr>
             </thead>
             <tbody class="striped">
-                <% @movies.each do |movie| %>
+                <% @series.each do |serie| %>
                     <tr>
-                        <td class="col-medium" scope="row"> <%= movie.name %> </td>
-                        <td class="col-medium"> <%= movie.director %> </td>
-                        <td class="col-large">  <%= movie.synopsis %> </td>
+                        <td class="col-medium" scope="row"> <%= serie.name %> </td>
+                        <td class="col-medium"> <%= serie.director %> </td>
+                        <td class="col-large">  <%= serie.synopsis %> </td>
                     </tr>
                 <% end %>
             </tbody>
         </table>
-
-        <button class="secondary"> <%= link_to "Subir", movies_index_path %> </button>
         <br>
         <br>
     <% else %>
-        <p>No se han ingresado películas</p>
+        <p></p>
     <% end %>
+
 </div>

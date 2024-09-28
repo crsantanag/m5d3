@@ -1,4 +1,4 @@
-<div>ovie
+<div>
     <h1>Documentales</h1>
 
     <div class="grid"> 
@@ -14,7 +14,7 @@
     </div>
     <br>
 
-    <% if @documentaries.any? %>
+        <% if @documentaries.any? %>
         <table>
             <thead data-theme="light">
                 <tr>
@@ -32,14 +32,11 @@
                     </tr>
                 <% end %>
             </tbody>
-            <tfoot>
-            </tfoot>
         </table>
-
-        <button class="secondary"> <%= link_to "Subir", documentaries_index_path %> </button>
         <br>
         <br>
     <% else %>
-        <p>No se han ingresado documentales</p>
+        <p></p>
     <% end %>
+
 </div>

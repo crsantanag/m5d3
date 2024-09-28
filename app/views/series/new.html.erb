@@ -1,27 +1,33 @@
 <div>
     <h1>Series</h1>
 
-    <div>
-        <button class="secondary"> <%= link_to "Volver", root_path %> </button>
-        <button class="secondary"> <%= link_to "Listar", series_index_path %> </button>
-        <button class="secondary"> <%= link_to "Crear",  series_new_path %> </button>
+    <div class="grid"> 
+        <%= form_with url: series_search_path, method: :get, local: true do |form| %>
+            <button class="secondary"> <%= link_to "Volver", root_path %> </button>
+            <button class="secondary"> <%= link_to "Listar", series_index_path %> </button>
+            <button class="secondary"> <%= link_to "Crear",  series_new_path %> </button>
+            <button class="secondary"> <%= link_to "Buscar", series_search_path %> </button>
+            <%= form.label :query, "Buscar película o texto" %>
+            <%= form.text_field :query, required: true, class: "input-width-search" %>
+            <%= form.submit "Buscar", class: "input-width-search" %>
+        <% end %>
     </div>
     <br>
     <%= form_with model: @serie, method: :post do |form| %>
         <div class="col-large">
-            <%= form.label :name, "Name" %>
-            <%= form.text_field :name, required: true %>
+            <%= form.label :name, "Name (max 50 caracteres)" %>
+            <%= form.text_field :name, required: true, class: "input-width-new" %>
         </div>
         <div class="col-large">
-            <%= form.label :director, "Director" %>
-            <%= form.text_field :director, required: true %>
+            <%= form.label :director, "Director (max 50 caracteres)" %>
+            <%= form.text_field :director, required: true, class: "input-width-new" %>
         </div>
         <div class="col-large">
-            <%= form.label :synopsis, "Synopsis" %>
-            <%= form.text_field :synopsis, required: true %>
+            <%= form.label :synopsis, "Synopsis (max 50 caracteres)" %>
+            <%= form.text_field :synopsis, required: true, class: "input-width-new" %>
         </div>
         <div class="col-medium">
-            <%= form.submit "Guardar serie" %>
+            <%= form.submit "Guardar serie", class: "input-width-new" %>
         </div>
     <% end %>
 </div>

@@ -14,7 +14,7 @@
     </div>
     <br>
 
-    <% if @movies.any? %>
+        <% if @movies.any? %>
         <table>
             <thead data-theme="light">
                 <tr>
@@ -33,11 +33,10 @@
                 <% end %>
             </tbody>
         </table>
-
-        <button class="secondary"> <%= link_to "Subir", movies_index_path %> </button>
         <br>
         <br>
     <% else %>
-        <p>No se han ingresado películas</p>
+        <p></p>
     <% end %>
+
 </div>

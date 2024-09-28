@@ -1,5 +1,6 @@
 class DocumentariesController < ApplicationController
   def option
+    @documentary = Documentary.new
   end
 
   def new
@@ -23,6 +24,15 @@ class DocumentariesController < ApplicationController
     @documentary = Documentary.find(params[:id])
     @message = params[:message]
   end
+
+  def search
+    if params[:query].present?
+      @documentaries = Documentary.where("name ILIKE :query OR director ILIKE :query OR synopsis ILIKE :query", query: "%#{params[:query]}%")
+    else
+      @documentaries = []
+    end
+  end
+
 
   private
 

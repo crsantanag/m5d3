@@ -1,28 +1,45 @@
 <div>
     <h1>Películas</h1>
 
-    <div>
-        <button class="secondary"> <%= link_to "Volver", root_path %> </button>
-        <button class="secondary"> <%= link_to "Listar", movies_index_path %> </button>
-        <button class="secondary"> <%= link_to "Crear",  movies_new_path %> </button>
+    <div class="grid"> 
+        <%= form_with url: movies_search_path, method: :get, local: true do |form| %>
+            <button class="secondary"> <%= link_to "Volver", root_path %> </button>
+            <button class="secondary"> <%= link_to "Listar", movies_index_path %> </button>
+            <button class="secondary"> <%= link_to "Crear",  movies_new_path %> </button>
+            <button class="secondary"> <%= link_to "Buscar", movies_search_path %> </button>
+            <%= form.label :query, "Buscar película o texto" %>
+            <%= form.text_field :query, required: true, class: "input-width-search" %>
+            <%= form.submit "Buscar", class: "input-width-search" %>
+        <% end %>
     </div>
     <br>
 
     <%= form_with model: @movie, method: :post do |form| %>
+        <% if @movie.errors.any? %>
+            <div>
+                <h2><%= pluralize(@movie.errors.count, "error") %> prohibió que se guardara la película:</h2>
+                <ul>
+                    <% @movie.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+        
         <div class="col-large">
             <%= form.label :name, "Nombre (max 50 caracteres)" %>
-            <%= form.text_field :name, required: true %>
+            <%= form.text_field :name, required: true, class: "input-width-new" %>
         </div>
         <div class="col-large">
             <%= form.label :director, "Director (max 50 caracteres)" %>
-            <%= form.text_field :director, required: true %>
+            <%= form.text_field :director, required: true, class: "input-width-new" %>
         </div>
         <div class="col-large">
             <%= form.label :synopsis, "Sinopsis (max 250 caracteres)" %>
-            <%= form.text_field :synopsis, required: true %>
+            <%= form.text_field :synopsis, required: true, class: "input-width-new" %>
         </div>
         <div class="col-medium">
-            <%= form.submit "Guardar película" %>
+            <%= form.submit "Guardar película", class: "input-width-new"  %>
         </div>
     <% end %>
 </div>

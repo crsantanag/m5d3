@@ -10,7 +10,15 @@
 #  updated_at :datetime         not null
 #
 class Documentary < ApplicationRecord
-  validates :name,     presence: true, length: {in:2..50}
-  validates :director, presence: true, length: {in: 2..50}
-  validates :synopsis, presence: true, length: {in:2..250}
+  validates :name,
+    presence: { message: "no puede estar vacío" },
+    length: { in: 2..50, message: "debe tener entre 2 y 50 caracteres" }
+
+  validates :director,
+    presence: { message: "no puede estar vacío" },
+    length: { in: 2..50, message: "debe tener entre 2 y 50 caracteres" }
+
+  validates :synopsis,
+    presence: { message: "no puede estar vacío" },
+    length: { in: 2..250, message: "debe tener entre 2 y 250 caracteres" }
 end

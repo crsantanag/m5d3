@@ -14,3 +14,10 @@
     width: 100%;
 }
 
+.input-width-search {
+    max-width: 400px;
+}
+
+.input-width-new {
+    max-width: 600px;
+}

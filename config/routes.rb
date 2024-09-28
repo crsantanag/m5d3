@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get  "movies/create"
   post "movies" => "movies#create"
   get  "movies/show"
+  get  "movies/search"
 
   get  "series" => "series#option"
   get  "series/index"
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   get  "series/create"
   post "series" => "series#create"
   get  "series/show"
+  get  "series/search"
 
   get  "documentaries"  => "documentaries#option"
   get  "documentaries/index"
@@ -22,6 +24,7 @@ Rails.application.routes.draw do
   get  "documentaries/create"
   post "documentaries" => "documentaries#create"
   get  "documentaries/show"
+  get  "documentaries/search"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
