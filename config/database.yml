@@ -23,9 +23,9 @@ default: &default
 development:
   <<: *default
   database: m5d3
-  username: csantana
-  password: koala361
-  host: localhost
+  #username: 
+  #password: 
+  #host:
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -60,9 +60,9 @@ development:
 test:
   <<: *default
   database: m5d3_test
-  username: csantana
-  password: koala361
-  host: localhost
+  #username:
+  #password:
+  #host:
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
