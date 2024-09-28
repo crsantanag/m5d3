@@ -6,14 +6,14 @@ Ruby on Rails - postgresql
 
 Esta aplicación realiza operaciones con bases de datos: crear, listar y -adicionalmente- buscar
 
-
 ## Inicio
 
 Estas instrucciones te ayudarán a obtener una copia del proyecto y a ejecutarlo en tu máquina local para fines de desarrollo y prueba.
 
 ### Pre-requisitos
 
-Este proyecto fue desarrollado con Rails - versión 7 y PostgreSQL - versión 16 
+Este proyecto fue desarrollado con Rails - versión 7 y PostgreSQL - versión 16.
+Para mejorar las vistas usa Pico.css, el que se instala automáticamente vía CDN.
 
 ### Instalación
 
