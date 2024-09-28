@@ -28,7 +28,7 @@ end
 
 100.times do
   Documentary.create(
-    name: Faker::Movie.title,
+    name: Faker::Book.title,
     director: Faker::Name.name,
     synopsis: Faker::Lorem.paragraph(sentence_count: 5)
   )
