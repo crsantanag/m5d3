@@ -19,15 +19,22 @@
   </head>
 
   <body class="main container">
-    <h1>IMdB</h1>
-    <br>
     <div>
-      <button class="outline contrast"> <%= link_to "Inicio", root_path %> </button>
-      <button class="outline contrast"> <%= link_to "Películas", movies_index_path %> </button>
-      <button class="outline contrast"> <%= link_to "Series", series_index_path %> </button>
-      <button class="outline contrast"> <%= link_to "Documentales", documentaries_index_path %> </button>
+      <nav>
+
+        <ul>
+          <li> <button class="outline contrast"> <%= link_to "Inicio",       root_path %> </button> </li>
+          <li> <button class="outline contrast"> <%= link_to "Películas",    movies_index_path %> </button> </li>
+          <li> <button class="outline contrast"> <%= link_to "Series",       series_index_path %> </button> </li>
+          <li> <button class="outline contrast"> <%= link_to "Documentales", documentaries_index_path %> </li>
+        </ul>
+
+        <ul>
+          <li><strong>IMDb</strong></li>
+        </ul>
+
+      </nav>
     <div>
-    <br>
 
     <%= yield %>
     
