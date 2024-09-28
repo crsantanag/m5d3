@@ -1,24 +1,26 @@
 Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#index"
+
   get  "documentaries/index"
+  get  "documentaries/listar"
+  get  "documentaries/new"
   get  "documentaries/create"
-  get  "documentaries /new"
+  post "documentaries" => "documentaries#create"
+  get  "documentaries/mostrar"
 
   get  "series/index"
-  get  "series/create"
+  get  "series/listar"
   get  "series/new"
+  get  "series/create"
+  post "series" => "series#create"
+  get  "series/mostrar"
 
   get  "movies/index"
-  get  "movies/show"
+  get  "movies/listar"
   get  "movies/new"
   get  "movies/create"
-  get  "movies/editar"
-  get  "movies/eliminar"
-  
-  post   "moviescr" => "movies#create"
-  delete "moviesdl" => "movies/delete"
- 
+  post "movies" => "movies#create"
   get  "movies/mostrar"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

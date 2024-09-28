@@ -1,2 +1,28 @@
-<h1>Documentaries#new</h1>
-<p>Find me in app/views/documentaries/new.html.erb</p>
+<div>
+    <h1>Documentales</h1>
+
+    <div>
+        <button class="secondary"> <%= link_to "Volver", root_path %> </button>
+        <button class="secondary"> <%= link_to "Listar", documentaries_listar_path %> </button>
+        <button class="secondary"> <%= link_to "Crear",  documentaries_new_path %> </button>
+    </div>
+    <br>
+
+    <%= form_with model: @documentary, method: :post do |form| %>
+        <div class="col-large">
+            <%= form.label :name, "Nombre (max 50 caracteres)" %>
+            <%= form.text_field :name, required: true %>
+        </div>
+        <div class="col-large">
+            <%= form.label :director, "Director (max 50 caracteres)" %>
+            <%= form.text_field :director, required: true %>
+        </div>
+        <div class="col-large">
+            <%= form.label :synopsis, "Sinopsis (max 250 caracteres)" %>
+            <%= form.text_field :synopsis, required: true %>
+        </div>
+        <div class="col-medium">
+            <%= form.submit "Guardar película" %>
+        </div>
+    <% end %>
+</div>

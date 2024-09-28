@@ -1,29 +1,28 @@
-<h1>Movies#</h1>
-<h1>Movies#new</h1>
-
 <div>
-    <button class="secondary"> <%= link_to "Volver",   root_path %> </button>
-    <button class="secondary"> <%= link_to "Listar",   movies_show_path %> </button>
-    <button class="secondary"> <%= link_to "Crear",    movies_new_path %> </button>
-    <button class="secondary"> <%= link_to "Editar",   movies_editar_path %> </button>
-    <button class="secondary"> <%= link_to "Eliminar", movies_eliminar_path %> </button>
-<br>
+    <h1>Películas</h1>
 
-<br>
-<%= form_with model: @movie, method: :post do |form| %>
     <div>
-        <%= form.label :name, "Name" %>
-        <%= form.text_field :name %>
+        <button class="secondary"> <%= link_to "Volver",   root_path %> </button>
+        <button class="secondary"> <%= link_to "Listar",   movies_listar_path %> </button>
+        <button class="secondary"> <%= link_to "Crear",    movies_new_path %> </button>
     </div>
-    <div>
-        <%= form.label :director, "Director" %>
-        <%= form.text_field :director %>
-    </div>
-    <div>
-        <%= form.label :synopsis, "Synopsis" %>
-        <%= form.text_field :synopsis %>
-    </div>
-    <div>
-        <%= form.submit %>
-    </div>
-<% end %>
+    <br>
+
+    <%= form_with model: @movie, method: :post do |form| %>
+        <div class="col-large">
+            <%= form.label :name, "Nombre (max 50 caracteres)" %>
+            <%= form.text_field :name, required: true %>
+        </div>
+        <div class="col-large">
+            <%= form.label :director, "Director (max 50 caracteres)" %>
+            <%= form.text_field :director, required: true %>
+        </div>
+        <div class="col-large">
+            <%= form.label :synopsis, "Sinopsis (max 250 caracteres)" %>
+            <%= form.text_field :synopsis, required: true %>
+        </div>
+        <div class="col-medium">
+            <%= form.submit "Guardar película" %>
+        </div>
+    <% end %>
+</div>

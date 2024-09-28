@@ -7,4 +7,12 @@
         <button class="secondary"> <%= link_to "Crear",  documentaries_new_path %> </button>
     <div>
     <br>
-<div>
+
+    <h3>La película con los siguientes datos ha sido <%= @message %>:</h3>
+
+    <ul>
+        <li>Nombre   : <%= @documentary.name %></li>
+        <li>Director : <%= @documentary.director %></li>
+        <li>Sinopsis : <%= @documentary.synopsis %></li>
+    </ul>
+</div>

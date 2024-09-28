@@ -1,2 +1,27 @@
-<h1>Series#new</h1>
-<p>Find me in app/views/series/new.html.erb</p>
+<div>
+    <h1>Series</h1>
+
+    <div>
+        <button class="secondary"> <%= link_to "Volver", root_path %> </button>
+        <button class="secondary"> <%= link_to "Listar", series_listar_path %> </button>
+        <button class="secondary"> <%= link_to "Crear",  series_new_path %> </button>
+    </div>
+    <br>
+    <%= form_with model: @serie, method: :post do |form| %>
+        <div class="col-large">
+            <%= form.label :name, "Name" %>
+            <%= form.text_field :name, required: true %>
+        </div>
+        <div class="col-large">
+            <%= form.label :director, "Director" %>
+            <%= form.text_field :director, required: true %>
+        </div>
+        <div class="col-large">
+            <%= form.label :synopsis, "Synopsis" %>
+            <%= form.text_field :synopsis, required: true %>
+        </div>
+        <div class="col-medium">
+            <%= form.submit %>
+        </div>
+    <% end %>
+</div>

@@ -7,4 +7,13 @@
         <button class="secondary"> <%= link_to "Crear",  series_new_path %> </button>
     <div>
     <br>
-<div>
+
+    <h3>La serie con los siguientes datos ha sido <%= @message %>:</h3>
+
+    <ul>
+        <li>Id       : <%= @serie.id %></li>
+        <li>Nombre   : <%= @serie.name %></li>
+        <li>Director : <%= @serie.director %></li>
+        <li>Sinopsis : <%= @serie.synopsis %></li>
+    </ul>
+</div>

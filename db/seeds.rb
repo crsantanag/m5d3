@@ -8,6 +8,28 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-10.times do |i|
-  Movies.create
+require 'faker'
+
+200.times do
+  Movie.create(
+    name: Faker::Movie.title,
+    director: Faker::Name.name,
+    synopsis: Faker::Lorem.paragraph(sentence_count: 5)
+  )
+end
+
+200.times do
+  Serie.create(
+    name: Faker::TvShows::Friends.character, 
+    director: Faker::Name.name,
+    synopsis: Faker::Lorem.paragraph(sentence_count: 5)
+  )
+end
+
+200.times do
+  Documentary.create(
+    name: Faker::Movie.title,     
+    director: Faker::Name.name,
+    synopsis: Faker::Lorem.paragraph(sentence_count: 5)
+  )
 end
