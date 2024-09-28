@@ -13,7 +13,9 @@
         <% end %>
     </div>
     <br>
+
     <%= form_with model: @serie, method: :post do |form| %>
+
         <div class="col-large">
             <%= form.label :name, "Name (max 50 caracteres)" %>
             <%= form.text_field :name, required: true, class: "input-width-new" %>
@@ -29,5 +31,6 @@
         <div class="col-medium">
             <%= form.submit "Guardar serie", class: "input-width-new" %>
         </div>
+    
     <% end %>
 </div>

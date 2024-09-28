@@ -15,17 +15,6 @@
     <br>
 
     <%= form_with model: @movie, method: :post do |form| %>
-        <% if @movie.errors.any? %>
-            <div>
-                <h2><%= pluralize(@movie.errors.count, "error") %> prohibió que se guardara la película:</h2>
-                <ul>
-                    <% @movie.errors.full_messages.each do |msg| %>
-                        <li><%= msg %></li>
-                    <% end %>
-                </ul>
-            </div>
-        <% end %>
-        
         <div class="col-large">
             <%= form.label :name, "Nombre (max 50 caracteres)" %>
             <%= form.text_field :name, required: true, class: "input-width-new" %>
