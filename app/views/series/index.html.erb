@@ -3,8 +3,33 @@
 
     <div>
         <button class="secondary"> <%= link_to "Volver", root_path %> </button>
-        <button class="secondary"> <%= link_to "Listar", series_listar_path %> </button>
+        <button class="secondary"> <%= link_to "Listar", series_index_path %> </button>
         <button class="secondary"> <%= link_to "Crear",  series_new_path %> </button>
     <div>
     <br>
-<div>
+
+    <table>
+        <thead data-theme="light">
+            <tr>
+                <th class="col-medium" scope="col">Nombre</th>
+                <th class="col-medium" scope="col">Director</th>
+                <th class="col-large"  scope="col">Sinopsis</th>
+            </tr>
+        </thead>
+        <tbody class="striped">
+            <% @series.each do |serie| %>
+                <tr>
+                    <td class="col-medium" scope="row"> <%= serie.name %> </td>
+                    <td class="col-medium"> <%= serie.director %> </td>
+                    <td class="col-large">  <%= serie.synopsis %> </td>
+                </tr>
+            <% end %>
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+
+    <button class="secondary"> <%= link_to "Subir", series_index_path %> </button>
+    <br>
+    <br>
+</div>

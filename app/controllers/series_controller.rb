@@ -1,25 +1,25 @@
 class SeriesController < ApplicationController
-  def index
+  def option
   end
 
   def new
     @serie = Serie.new
   end
 
-  def listar
-    @serie = Serie.all
+  def index
+    @series = Serie.all
   end
 
   def create
     @serie = Serie.new(series_params)
     if @serie.save
-      redirect_to series_mostrar_path(id: @serie.id, message: "creada")
+      redirect_to series_show_path(id: @serie.id, message: "creada")
     else
       render :new
     end
   end
 
-  def mostrar
+  def show
     @serie = Serie.find(params[:id])
     @message = params[:message]
   end

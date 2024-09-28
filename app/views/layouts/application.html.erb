@@ -24,9 +24,9 @@
 
         <ul>
           <li> <button class="outline contrast"> <%= link_to "Inicio",       root_path %> </button> </li>
-          <li> <button class="outline contrast"> <%= link_to "Películas",    movies_index_path %> </button> </li>
-          <li> <button class="outline contrast"> <%= link_to "Series",       series_index_path %> </button> </li>
-          <li> <button class="outline contrast"> <%= link_to "Documentales", documentaries_index_path %> </li>
+          <li> <button class="outline contrast"> <%= link_to "Películas",    movies_path %> </button> </li>
+          <li> <button class="outline contrast"> <%= link_to "Series",       series_path %> </button> </li>
+          <li> <button class="outline contrast"> <%= link_to "Documentales", documentaries_path %> </li>
         </ul>
 
         <ul>
@@ -37,6 +37,12 @@
     <div>
 
     <%= yield %>
+
+    <footer>
+      <br>
+			<br>
+      <br>
+		</footer>
     
   </body>
 </html>

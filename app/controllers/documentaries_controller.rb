@@ -1,31 +1,31 @@
 class DocumentariesController < ApplicationController
-  def index
+  def option
   end
 
   def new
     @documentary = Documentary.new
   end
 
-  def listar
-    @documentary = Documentary.all
+  def index
+    @documentaries = Documentary.all
   end
 
   def create
     @documentary = Documentary.new(documentaries_params)
     if @documentary.save
-      redirect_to documentaries_mostrar_path(id: @documentary.id, message: "creada")
+      redirect_to documentaries_show_path(id: @documentary.id, message: "creada")
     else
       render :new
     end
   end
 
-  def mostrar
+  def show
     @documentary = Documentary.find(params[:id])
     @message = params[:message]
   end
 
   private
-  
+
   def documentaries_params
     params.require(:documentary).permit(:name, :director, :synopsis)
   end

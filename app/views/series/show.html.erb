@@ -3,7 +3,7 @@
 
     <div>
         <button class="secondary"> <%= link_to "Volver", root_path %> </button>
-        <button class="secondary"> <%= link_to "Listar", series_listar_path %> </button>
+        <button class="secondary"> <%= link_to "Listar", series_index_path %> </button>
         <button class="secondary"> <%= link_to "Crear",  series_new_path %> </button>
     <div>
     <br>
@@ -11,7 +11,6 @@
     <h3>La serie con los siguientes datos ha sido <%= @message %>:</h3>
 
     <ul>
-        <li>Id       : <%= @serie.id %></li>
         <li>Nombre   : <%= @serie.name %></li>
         <li>Director : <%= @serie.director %></li>
         <li>Sinopsis : <%= @serie.synopsis %></li>
