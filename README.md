@@ -4,7 +4,7 @@ Ruby on Rails - postgresql
 
 ## Descripción
 
-Esta aplicación realiza operaciones con bases de datos: crear, listar y -adicionalmente- buscar
+Esta aplicación realiza operaciones con bases de datos: crear, listar y -adicionalmente- borrar y buscar
 
 ## Inicio
 
