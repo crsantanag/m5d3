@@ -6,6 +6,7 @@
             <button class="secondary"> <%= link_to "Volver", root_path %> </button>
             <button class="secondary"> <%= link_to "Listar", movies_index_path %> </button>
             <button class="secondary"> <%= link_to "Crear",  movies_new_path %> </button>
+            <button class="secondary"> <%= link_to "Borrar", movies_remove_path %> </button>
             <button class="secondary"> <%= link_to "Buscar", movies_search_path %> </button>
             <%= form.label :query, "Buscar película o texto" %>
             <%= form.text_field :query, required: true, class: "input-width-search" %>
@@ -18,6 +19,7 @@
         <table>
             <thead data-theme="light">
                 <tr>
+                    <td class="col-small"  scope="col">Id</td>   
                     <th class="col-medium" scope="col">Nombre</th>
                     <th class="col-medium" scope="col">Director</th>
                     <th class="col-large"  scope="col">Sinopsis</th>
@@ -26,7 +28,8 @@
             <tbody class="striped">
                 <% @movies.each do |movie| %>
                     <tr>
-                        <td class="col-medium" scope="row"> <%= movie.name %> </td>
+                        <td class="col-small" scope="row"> <%= movie.id %> </td>                        
+                        <td class="col-medium"> <%= movie.name %> </td>
                         <td class="col-medium"> <%= movie.director %> </td>
                         <td class="col-large">  <%= movie.synopsis %> </td>
                     </tr>
@@ -41,3 +44,4 @@
         <p>No se han ingresado películas</p>
     <% end %>
 </div>
+

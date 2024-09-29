@@ -1,5 +1,5 @@
 .col-small {
-    width: 15%;
+    width: 5%;
 }
 
 .col-medium {
@@ -20,4 +20,8 @@
 
 .input-width-new {
     max-width: 600px;
+}
+
+.input-width-number {
+    max-width: 200px;
 }

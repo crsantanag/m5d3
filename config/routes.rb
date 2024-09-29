@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   get  "movies/index"
   get  "movies/new"
   get  "movies/create"
-  post "movies" => "movies#create"
+  get  "movies/remove"
+  post   "movies" => "movies#create"
+  delete "movies" => "movies#delete"
   get  "movies/show"
   get  "movies/search"
+  get  "movies/noexiste"
 
   get  "series" => "series#option"
   get  "series/index"

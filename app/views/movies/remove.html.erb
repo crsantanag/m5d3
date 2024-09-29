@@ -17,7 +17,7 @@
 
     <% if @movie.errors.any? %>
         <div>
-            <h4><%= pluralize(@movie.errors.count, "Error") %> - No se puede guardar la serie:</h4>
+            <h4><%= pluralize(@movie.errors.count, "Error") %> - Id</h4>
             <ul>
                 <% @movie.errors.full_messages.each do |msg| %>
                     <li><%= msg %></li>
@@ -27,21 +27,15 @@
         <br>
     <% end %>
 
-    <%= form_with model: @movie, method: :post, local: true, data: { turbo: false } do |form| %>
-        <div class="col-large">
-            <%= form.label :name, "Nombre (max 50 caracteres)" %>
-            <%= form.text_field :name, required: true, class: "input-width-new" %>
-        </div>
-        <div class="col-large">
-            <%= form.label :director, "Director (max 50 caracteres)" %>
-            <%= form.text_field :director, required: true, class: "input-width-new" %>
-        </div>
-        <div class="col-large">
-            <%= form.label :synopsis, "Sinopsis (max 250 caracteres)" %>
-            <%= form.text_field :synopsis, required: true, class: "input-width-new" %>
+    <%= form_with model: @movie, method: :delete, local: true, data: { turbo: false } do |form| %>
+        <div class="col-medium">
+            <%= form.label :id, "Id (number)" %>
+            <%= form.text_field :id, required: true, class: "input-width-number", min: 1 %>
         </div>
         <div class="col-medium">
-            <%= form.submit "Guardar película", class: "input-width-new"  %>
+            <%= form.submit "Eliminar", class: "input-width-number"  %>
         </div>
     <% end %>
 </div>
+<br>
+
