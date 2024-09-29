@@ -14,7 +14,19 @@
     </div>
     <br>
 
-    <%= form_with model: @documentary, method: :post do |form| %>
+    <% if @documentary.errors.any? %>
+        <div>
+            <h4><%= pluralize(@documentary.errors.count, "Error") %> - No se puede guardar el documental:</h4>
+            <ul>
+                <% @documentary.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+        <br>
+    <% end %>
+
+    <%= form_with model: @documentary, method: :post, local: true, data: { turbo: false } do |form| %>
         <div class="col-large">
             <%= form.label :name, "Nombre (max 50 caracteres)" %>
             <%= form.text_field :name, required: true, class: "input-width-new" %>

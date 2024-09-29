@@ -14,7 +14,7 @@ class DocumentariesController < ApplicationController
   def create
     @documentary = Documentary.new(documentaries_params)
     if @documentary.save
-      redirect_to documentaries_show_path(id: @documentary.id, message: "creada")
+      redirect_to documentaries_show_path(id: @documentary.id, message: "creado")
     else
       render :new
     end

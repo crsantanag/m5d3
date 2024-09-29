@@ -14,7 +14,19 @@
     </div>
     <br>
 
-    <%= form_with model: @serie, method: :post do |form| %>
+    <% if @serie.errors.any? %>
+        <div>
+            <h4><%= pluralize(@serie.errors.count, "Error") %> - No se puede guardar la serie:</h4>
+            <ul>
+                <% @serie.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+        <br>
+    <% end %>
+
+    <%= form_with model: @serie, method: :post, local: true, data: { turbo: false } do |form| %>
 
         <div class="col-large">
             <%= form.label :name, "Name (max 50 caracteres)" %>

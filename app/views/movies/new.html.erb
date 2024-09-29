@@ -14,7 +14,20 @@
     </div>
     <br>
 
-    <%= form_with model: @movie, method: :post do |form| %>
+
+    <% if @movie.errors.any? %>
+        <div>
+            <h4><%= pluralize(@movie.errors.count, "Error") %> - No se puede guardar la serie:</h4>
+            <ul>
+                <% @movie.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+        <br>
+    <% end %>
+
+    <%= form_with model: @movie, method: :post, local: true, data: { turbo: false } do |form| %>
         <div class="col-large">
             <%= form.label :name, "Nombre (max 50 caracteres)" %>
             <%= form.text_field :name, required: true, class: "input-width-new" %>
