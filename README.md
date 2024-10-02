@@ -19,10 +19,10 @@ Para mejorar las vistas usa Pico.css, el que se instala automáticamente vía CD
 
 Sigue estos pasos para ejecutar el proyecto localmente:
 
-1. Clona este repositorio en tu máquina local.
+1. Clona este repositorio en tu máquina local.  
 git clone https://github.com/crsantanag/m5d3.git
 
-2. Navega hasta el directorio del proyecto.
+2. Navega hasta el directorio del proyecto.  
 cd m5d3
 
 3. Instala dependencias y modifica archivo database.yml

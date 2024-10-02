@@ -2,12 +2,13 @@
     <h1>Películas</h1>
 
     <div class="grid"> 
-        <%= form_with url: movies_search_path, method: :get, local: true do |form| %>
+        <%= form_with url: movies_string_path, method: :get, local: true do |form| %>
             <button class="secondary"> <%= link_to "Volver", root_path %> </button>
             <button class="secondary"> <%= link_to "Listar", movies_index_path %> </button>
             <button class="secondary"> <%= link_to "Crear",  movies_new_path %> </button>
-            <button class="secondary"> <%= link_to "Borrar", movies_remove_path %> </button>
-            <button class="secondary"> <%= link_to "Buscar", movies_search_path %> </button>
+            <button class="secondary"> <%= link_to "Editar", search_movies_path %> </button>
+            <button class="secondary"> <%= link_to "Eliminar", remove_movies_path %> </button>
+            <button class="secondary"> <%= link_to "Buscar", movies_string_path %> </button>
             <%= form.label :query, "Buscar película o texto" %>
             <%= form.text_field :query, required: true, class: "input-width-search" %>
             <%= form.submit "Buscar", class: "input-width-search" %>
@@ -15,29 +16,17 @@
     </div>
     <br>
 
-        <% if @movies.any? %>
-        <table>
-            <thead data-theme="light">
-                <tr>
-                    <th class="col-medium" scope="col">Nombre</th>
-                    <th class="col-medium" scope="col">Director</th>
-                    <th class="col-large"  scope="col">Sinopsis</th>
-                </tr>
-            </thead>
-            <tbody class="striped">
-                <% @movies.each do |movie| %>
-                    <tr>
-                        <td class="col-medium" scope="row"> <%= movie.name %> </td>
-                        <td class="col-medium"> <%= movie.director %> </td>
-                        <td class="col-large">  <%= movie.synopsis %> </td>
-                    </tr>
-                <% end %>
-            </tbody>
-        </table>
-        <br>
-        <br>
-    <% else %>
-        <p></p>
+    <h2>Ingrese Id</h2>
+    <%= form_with url: search_movies_path(id: ""), method: :get, local: true, data: { turbo: false } do |form| %>
+        <div class="col-medium">
+            <%= form.label :id, "Id (number)" %>
+            <%= form.text_field :id, required: true, class: "input-width-number", min: 1 %>
+        </div>
+        <div class="col-medium">
+            <%= form.submit "Editar", class: "input-width-number"  %>
+        </div>
     <% end %>
 
 </div>
+<br>
+

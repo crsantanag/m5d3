@@ -11,27 +11,18 @@ Rails.application.routes.draw do
   # Crear película
   get    "movies/new"
   get    "movies/create"
-  post   "movies",            to:  "movies#create"
+  post   "movies",           to:   "movies#create"
 
   # Actualizar película
-  get   "movies/search",        to: "movies#search",  as: "search_movies"   # Ruta para solicitar el ID
-  # get   "/movies/search",       to: "movies#search",    as: "search_movies"   # Ruta para solicitar el ID
-  # GET  /articles/:id/edit(.:format)   articles#edit edit_article
-  # get "movies/:id/edita",   to: "movies#edita",    as: "movies_edita"
-  get   "movies/:id/edita",   to: "movies#edita",    as: "movies_edita"   # Ruta para el formulario de edición
-  # get   "/movies/:id/edit",   to: "movies#edit",    as: "edit_movies"   # Ruta para el formulario de edición
-  patch "movies/:id",        to: "movies#update",  as: "update_movies"
-
-  # get    "movies/search",       to: "movies#search",   as: "search_movies"
-  # get    "movies/:id/edit",   to: "movies#edit",   as: "edit_movies"
-  # patch  "movies/:id",        to: "movies#update", as: "movie"
+  get    "movies/show",       to: "movies#show",   as: "show_movies"
+  get    "movies/:id/edit",   to: "movies#edit",   as: "edit_movies"
+  patch  "movies/:id",        to: "movies#update", as: ""
 
   # Eliminar película
-  get    "movies/remove"       => "movies#remove",        as: "remove_movies"
-  post   "movies/remove",     to: "movies#destroy_by_id", as: "destroy_movies"
-
+  get    "movies/remove"       => "movies#remove", as: "remove_movies"
+  post   "movies/remove",     to: "movies#destroy_by_id"
+  delete "movies/:id",        to: "movies#destoy"
   get    "movies/string"
-  get    "movies/search"
   get    "movies/display"
   get    "movies/noexiste"
 

@@ -18,7 +18,7 @@
 
     <% if @movie.errors.any? %>
         <div>
-            <h4><%= pluralize(@movie.errors.count, "Error") %> - No se puede guardar la película:</h4>
+            <h4><%= pluralize(@movie.errors.count, "Error") %> - No se puede actualizar la película:</h4>
             <ul>
                 <% @movie.errors.full_messages.each do |msg| %>
                     <li><%= msg %></li>
@@ -27,8 +27,11 @@
         </div>
         <br>
     <% end %>
-    <h2>Ingrese datos</h2>
-    <%= form_with model: @movie, method: :post, local: true, data: { turbo: false } do |form| %>
+
+    <%= form_with model: @movie, url: update_movies_path(@movie), method: :patch, local: true, data: { turbo: false } do |form| %>
+        <div class="col-medium">
+            <%= form.text_field :id, readonly: true, class: "input-width-number", min: 1 %>
+        </div>
         <div class="col-large">
             <%= form.label :name, "Nombre (max 50 caracteres)" %>
             <%= form.text_field :name, required: true, class: "input-width-new" %>
@@ -42,7 +45,9 @@
             <%= form.text_field :synopsis, required: true, class: "input-width-new" %>
         </div>
         <div class="col-medium">
-            <%= form.submit "Guardar película", class: "input-width-new"  %>
+            <%= form.submit "Actualizar", class: "input-width-new"  %>
         </div>
     <% end %>
 </div>
+<br>
+

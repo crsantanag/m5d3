@@ -10,26 +10,26 @@
 
 require 'faker'
 
-100.times do
+50.times do
   Movie.create(
-    name: Faker::Movie.title,
+    name:     Faker::Movie.title,
     director: Faker::Name.name,
-    synopsis: Faker::Lorem.paragraph(sentence_count: 5)
+    synopsis: Faker::Lorem.paragraph(sentence_count: 2)
   )
 end
 
-100.times do
+50.times do
   Serie.create(
-    name: Faker::TvShows::Friends.character,
+    name:     Faker::TvShows::Friends.character,
     director: Faker::Name.name,
-    synopsis: Faker::Lorem.paragraph(sentence_count: 5)
+    synopsis: Faker::Lorem.paragraph(sentence_count: 2)
   )
 end
 
-100.times do
+50.times do
   Documentary.create(
-    name: Faker::Book.title,
+    name:     Faker::Book.title,
     director: Faker::Name.name,
-    synopsis: Faker::Lorem.paragraph(sentence_count: 5)
+    synopsis: Faker::Lorem.paragraph(sentence_count: 2)
   )
 end
